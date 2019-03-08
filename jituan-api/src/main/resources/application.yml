@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: jituan-api  datasource:    url: jdbc:mysql://localhost:3306/acolDataBase?characterEncoding=utf-8
+    username: dave
+    password: 756ZHANG
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 10000
+      filters: stat,wall,log4j
+  session:    store-type: none
+  jpa:    database: MYSQL
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:      ddl-auto: update
+server:  port: 8888eureka:
+  instance:    instance-id: jituan-api
+    prefer-ip-address: true  client:    service-url:      defaultZone: http://localhost:7001/eureka
+info:
+  app.name: jituan-api
+  company.name: www.acolscada.cn
+  api-helper: swagger-ui.html
+  

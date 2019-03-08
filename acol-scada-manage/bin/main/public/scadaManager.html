@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>上海埃科临时演示页面</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+<link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
+								class="clear"> <span class="block m-t-xs"> <strong
+										class="font-bold">superAdmin</strong>
+								</span> <span class="text-muted text-xs block">操作 <b
+										class="caret"></b></span>
+							</span>
+							</a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a href="./logout">注销</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">IN+</div>
+					</li>
+					<li>
+						<a><i class="fa fa-th-large"></i> <span class="nav-label">设备管理</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="#scadaInfor.html">设备信息</a></li>
+							<li><a href="#scadaController.html">设备远程控制</a></li>
+						</ul>
+					</li>
+						
+				</ul>
+
+			</div>
+		</nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top white-bg" role="navigation"
+					style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+							href="#"><i class="fa fa-bars"></i> </a>
+						<form role="search" class="navbar-form-custom" method="post"
+							action="#">
+							<div class="form-group">
+								<input type="text" placeholder=""
+									class="form-control" name="top-search" id="top-search">
+							</div>
+						</form>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li><a href="./logout"> <i class="fa fa-sign-out"></i> 注销
+						</a></li>
+					</ul>
+
+				</nav>
+			</div>
+			<!-- <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center m-t-lg">
+                        <h1>
+                            Simple example of second view
+                        </h1>
+                        <small>Writen in minor.html file.</small>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>设备整体运行情况信息展示</h2>
+					<ol class="breadcrumb">
+						<li><a href="index.html">设备管理</a></li>
+						<li><a>设备信息</a></li>
+						<li class="active"><strong>信息展示</strong></li>
+					</ol>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+			<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+					<div class="col-lg-12">
+						
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="pull-right">
+					沪公网安备  <strong>31011702000479</strong> 号
+				</div>
+				<div>
+					公司名 <strong>上海埃科燃气测控设备有限公司</strong> &copy; 2000-2019
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Mainly scripts -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="js/plugins/dataTables/datatables.min.js"></script>
+	<!-- Custom and plugin javascript -->
+	<script src="js/inspinia.js"></script>
+	<script src="js/plugins/pace/pace.min.js"></script>
+	<script src="./layer/layer.js"></script>
+	<!-- Page-Level Scripts -->
+	<script type="text/javascript">
+	$("ul.nav-second-level").on("click","li",function() {
+		var url = "./"+$(this).children("a").attr("href").substr(1);
+		$.get(url,function success(data){
+			
+		}
+		
+	})
+  //返回 01-12 的月份值
+  	function showDetails(deviceNum){
+  		layer.open({
+		      type: 2,
+		      area: ['90%', '80%'],
+		      shadeClose: true, //点击遮罩关闭
+		      content: "./deviceRecords.html?deviceNum="+deviceNum
+		    });
+  }
+    function getMonth(date){  
+        var month = "";  
+        month = date.getMonth() + 1; //getMonth()得到的月份是0-11  
+        if(month<10){  
+            month = "0" + month;  
+        }  
+        return month; 
+    }  
+    //返回01-30的日期  
+    function getDay(date){  
+        var day = "";  
+        day = date.getDate();  
+        if(day<10){  
+            day = "0" + day;  
+        }  
+        return day;  
+    }
+    function getHours(date){ 
+    	 var hours = ""; 
+    	 hours = date.getHours(); 
+    	 if(hours<10){  
+    	  hours = "0" + hours;  
+    	 }  
+    	 return hours;  
+    	} 
+    	//分 
+    	function getMinutes(date){ 
+    	 var minute = ""; 
+    	 minute = date.getMinutes(); 
+    	 if(minute<10){  
+    	  minute = "0" + minute;  
+    	 }  
+    	 return minute;  
+    	} 
+    	//秒 
+    	function getSeconds(date){ 
+    	 var second = ""; 
+    	 second = date.getSeconds(); 
+    	 if(second<10){  
+    	  second = "0" + second;  
+    	 }  
+    	 return second;  
+    	}
+    
+    function dateFormat(longTypeDate){ 
+    	  var dateType = ""; 
+    	  var date = new Date(); 
+    	  date.setTime(longTypeDate); 
+    	  dateType += date.getFullYear();  //年 
+    	  dateType += "/" + getMonth(date); //月  
+    	  dateType += "/" + getDay(date);  //日 
+    	  dateType += " " + getHours(date); //时  
+    	  dateType += ":" + getMinutes(date);  //分 
+    	  dateType += ":" + getSeconds(date);  //分
+    	  return dateType;
+    }
+    var deviceInfos;
+    $.get('./scada',function success(data){
+		deviceInfos = data;
+		var trs = "";
+		$.each(deviceInfos, function(index, item) {
+			trs += "<tr class='gradeX'> <td class='center'>"+
+			"<div class='btn-group'> <button class='btn-white btn btn-xs' onclick=showDetails('"+item.scaNum+"')>"+item.scaNum+"</button></div>"+
+			"</td><td class='center'>"+
+			item.colType+"</td><td class='center'>"+
+			dateFormat(item.lastConTime)+"</td><td class='center'>"+
+			item.temp+"</td><td class='center'>"+
+			item.press+"</td><td class='center'>"+
+			item.scSum+"</td><td class='center'>"+
+			item.scFlow+"</td><td class='center'>"+
+			item.meterVolt+"</td><td class='center'>"+
+			item.icVolt+"</td></tr>";
+		});
+		 $("tbody").append(  //此处向select中循环绑定数据
+ 		  trs);
+		 
+		 $(document).ready(function(){
+	            $('.dataTables-example').DataTable({
+	                pageLength: 25,
+	                responsive: true,
+	                dom: '<"html5buttons"B>lTfgitp',
+	                buttons: [
+	                    { extend: 'copy'},
+	                    {extend: 'csv'},
+	                    {extend: 'excel', title: 'ExampleFile'},
+	                    {extend: 'pdf', title: 'ExampleFile'},
+	                    {extend: 'print',
+	                     customize: function (win){
+	                            $(win.document.body).addClass('white-bg');
+	                            $(win.document.body).css('font-size', '10px');
+	                            $(win.document.body).find('table')
+	                                    .addClass('compact')
+	                                    .css('font-size', 'inherit');
+	                    }
+	                    }
+	                ]
+
+	            });
+
+	        });
+	});
+       
+
+    </script>
+
+</body>
+
+</html>

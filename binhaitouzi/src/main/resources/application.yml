@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: acol-scada-binhai  session:    store-type: none
+ 
+server:  port: 10088
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.105.93.170:7001/eureka
+

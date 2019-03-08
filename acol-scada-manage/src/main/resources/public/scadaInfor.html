@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>上海埃科临时演示页面</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!--  -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!--  
+
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+<link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
+								class="clear"> <span class="block m-t-xs"> <strong
+										class="font-bold">superAdmin</strong>
+								</span> <span class="text-muted text-xs block">操作 <b
+										class="caret"></b></span>
+							</span>
+							</a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a href="./logout">注销</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">IN+</div>
+					</li>
+					<li class="active">
+						<a><i class="fa fa-th-large"></i> <span class="nav-label">设备管理</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="scadaInfor.html">设备信息</a></li>
+							<li><a href="scadaController.html">设备远程控制</a></li>
+						</ul>
+					</li>
+					<li class="active">
+						<a><i class="fa fa-user"></i> <span class="nav-label">管理员</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="admin.html">快速添加设备</a></li>
+							<li><a href="price.html">价格方案制定</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top white-bg" role="navigation"
+					style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+							href="#"><i class="fa fa-bars"></i> </a>
+						<form role="search" class="navbar-form-custom" method="post"
+							action="#">
+							<div class="form-group">
+								<input type="text" placeholder=""
+									class="form-control" name="top-search" id="top-search">
+							</div>
+						</form>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li><a href="./logout"> <i class="fa fa-sign-out"></i> 注销
+						</a></li>
+					</ul>
+
+				</nav>
+			</div>
+			<!-- <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center m-t-lg">
+                        <h1>
+                            Simple example of second view
+                        </h1>
+                        <small>Writen in minor.html file.</small>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>设备整体运行情况信息展示</h2>
+					<ol class="breadcrumb">
+						<li><a href="index.html">设备管理</a></li>
+						<li><a>设备信息</a></li>
+						<li class="active"><strong>信息展示</strong></li>
+					</ol>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+			<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+					  <div class="col-lg-12">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>设备信息展示</h5>
+								<div class="ibox-tools">
+									<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+									</a> <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+										<i class="fa fa-wrench"></i>
+									</a>
+									<ul class="dropdown-menu dropdown-user">
+										<li><a href="#">将所有设备初始化为出厂设置</a></li>
+
+									</ul>
+									<a class="close-link"> <i class="fa fa-times"></i>
+									</a>
+								</div>
+							</div>
+							<div class="ibox-content">
+
+								<div class="table-responsive">
+									<table
+										class="table table-striped table-bordered table-hover dataTables-example">
+										<thead>
+											<tr>
+												<th>设备编号</th>
+												<th>通讯类型</th>
+												<th>最近一次通讯时间</th>
+												<th>温度</th>
+												<th>压力</th>
+												<th>标况总量</th>
+												<th>标况流量</th>
+												<th>芯版电池电压</th>
+												<th>设备电压</th>
+												<th>设备类型</th>
+												<th>剩余气量</th>
+												<th>价格方案</th>
+												<th>阀门状态</th><!-- -->
+												
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th>设备编号</th>
+											  	<th>通讯类型</th>
+												<th>最近一次通讯时间</th>
+												<th>温度</th>
+												<th>压力</th>
+												<th>标况总量</th>
+												<th>标况流量</th>
+												<th>芯版电池电压</th>
+												<th>设备电压</th>
+												<th>设备类型</th>
+												<th>剩余气量</th>
+												<th>价格方案</th>
+												<th>阀门状态</th> <!---->
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="footer">
+				<div class="pull-right">
+					沪公网安备  <strong>31011702000479</strong> 号
+				</div>
+				<div>
+					公司名 <strong>上海埃科燃气测控设备有限公司</strong> &copy; 2000-2019
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Mainly scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+	<script src="js/plugins/dataTables/datatables.min.js"></script>
+	<!-- Custom and plugin javascript -->
+	<script src="js/inspinia.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/layer/2.3/layer.js"></script>
+	
+	<!-- Page-Level Scripts -->
+	<script src="js/core.js"></script>
+	<script type="text/javascript">
+	function showDetails(deviceNum){
+  		layer.open({
+		      type: 2,
+		      area: ['90%', '80%'],
+		      shadeClose: true, //点击遮罩关闭
+		      content: "./deviceRecords.html?deviceNum="+deviceNum
+		    });
+  	}
+    var deviceInfos;
+    $.get('./scada',function success(data){
+		deviceInfos = data;
+		var trs = "";
+		$.each(deviceInfos, function(index, item) {
+			
+			trs += "<tr class='gradeX'> <td class='center'>"+
+			"<div class='btn-group'> <button class='btn-white btn btn-xs' onclick=showDetails('"+item.scaNum+"')>"+item.scaNum+"</button></div>"+
+			"</td><td class='center'>"+item.colType+
+			"</td><td class='center'>"+dateFormat(item.lastConTime);
+			if(item.temp == null){
+				trs += "</td><td class='center'>";
+			}else{
+				trs += "</td><td class='center'>"+keep2Decimals(item.temp);
+			}
+			if(item.press == null){
+				trs += "</td><td class='center'>";
+			}else{
+				trs += "</td><td class='center'>"+keep2Decimals(item.press);
+			}
+			if(item.scSum == null){
+				trs += "</td><td class='center'>";
+			}else{
+				trs += "</td><td class='center'>"+keep2Decimals(item.scSum);
+			}
+			if(item.scFlow == null){
+				trs += "</td><td class='center'>";
+			}else{
+				trs += "</td><td class='center'>"+keep2Decimals(item.scFlow);
+			}
+			if(item.meterVolt == null){
+				trs += "</td><td class='center'>";
+			}else{
+				trs += "</td><td class='center'>"+keep2Decimals(item.meterVolt);
+			}
+			if(item.deviceVolt == null){
+				trs += "</td><td class='center'>";
+			}else{
+				trs +="</td><td class='center'>"+ keep2Decimals(item.deviceVolt);
+			}
+			
+			/**
+			<th>设备类型</th>
+			<th>剩余气量</th>
+			<th>价格方案</th>
+			<th>阀门状态</th>
+			*/
+			
+			if(item.deviceType == null || item.deviceType == "CollectionDevice"){//采集设备
+				trs += "</td><td class='center'>采集设备";
+			}else{
+				trs += "</td><td class='center'>IC设备";
+			}
+			if(item.surplusSum == null){
+				trs += "</td><td class='center'>";
+			}else{
+				trs += "</td><td class='center'>"+keep2Decimals(item.surplusSum);
+			}
+			
+			if(item.pricePlan == null){
+				trs += "</td><td class='center'>";
+			}else{
+				trs += "</td><td class='center'>"+item.pricePlan;
+			}
+			if(item.valueStatus == null){
+				trs += "</td><td class='center'>关阀";
+			}
+			else if(item.valueStatus == false){
+				trs += "</td><td class='center'>关阀";
+			}else{
+				trs += "</td><td class='center'>开阀 ";
+			}
+			trs+="</td></tr>";
+		});
+		 $("tbody").append(  //此处向select中循环绑定数据
+ 		  trs);
+		 
+		 $(document).ready(function(){
+	            $('.dataTables-example').DataTable({
+	                pageLength: 25,
+	                responsive: true,
+	                dom: '<"html5buttons"B>lTfgitp',
+	                buttons: [
+	                    { extend: 'copy'},
+	                    {extend: 'csv'},
+	                    {extend: 'excel', title: 'ExampleFile'},
+	                    {extend: 'pdf', title: 'ExampleFile'},
+	                    {extend: 'print',
+	                     customize: function (win){
+	                            $(win.document.body).addClass('white-bg');
+	                            $(win.document.body).css('font-size', '10px');
+	                            $(win.document.body).find('table')
+	                                    .addClass('compact')
+	                                    .css('font-size', 'inherit');
+	                    }
+	                    }
+	                ]
+
+	            });
+
+	        });
+	});
+    </script>
+</body>
+</html>

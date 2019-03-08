@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <link href="http://cdn.bootcss.com/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet">
+  <style>
+        .box {
+            width: 500px;
+            margin: auto;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .tagsinput-primary {
+            margin-bottom: 18px;
+        }
+        .tagsinput-primary .bootstrap-tagsinput {
+            border-color: #1abc9c;
+            margin-bottom: 0;
+        }
+        .btn {
+            background: #1abc9c;
+            border: 0;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .bootstrap-tagsinput{
+            width: 100%;
+        }
+        .bootstrap-tagsinput .label-info {
+            border-radius: 4px;
+            background-color: #1abc9c;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            overflow: hidden;
+            margin: 0 5px 5px 0;
+            padding: 6px 10px 6px 14px;
+            transition: .25s linear;
+        }
+    </style>
+</head>
+
+<body>	
+		<input type="text" id='tags_input' value="" data-role="tagsinput" />
+		<button class="btn" onclick="editUrls()">确认</button>
+		
+	<script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+<script src="../layer/layer.js"></script>
+	<script type="text/javascript">
+	//var tags_data = 
+		$('#tags_input').tagsinput();
+	function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+             if(pair[0] == variable){return pair[1];}
+        }
+            return(false);
+    }
+	
+	function success(data){
+    	//alert(data);
+    	//var jsonData = JSON.parse(data);
+    	//alert(data.urls);
+    	//alert(data.urls.toString());
+    	
+    	//$('#tags_input').val(data.urls.toString());
+    	if(data){
+    		$("#tags_input").tagsinput('removeAll');
+        	$("#tags_input").tagsinput('add',data.urls.toString());
+    	}
+    	
+    	
+    }
+	var id = getQueryVariable('id');
+	
+	$.get('../resource/'+ id,success);
+	
+	function editUrls(){
+        //alert($('#tags_input').val());
+        $.post('../resource/editUrls',getPostParam(), 
+        		function postSuccess(data){
+        			if(data.content==0){
+        				layer.msg('修改成功');
+        			}
+        });
+        
+       
+        function getPostParam(){
+        	var postParams = 'id='+ id;
+        	var tagVal = $('#tags_input').val();
+        	var tags = tagVal.split(',');
+        	for(var i=0; i<tags.length;i++){
+        		postParams = postParams+'&urls='+tags[i];
+        	}
+        	return postParams;
+        }
+        
+    	
+        //var postParam = 'id='+getQueryVariable('id');
+        
+      //  
+    }
+	
+	</script>
+</body>
+</html>

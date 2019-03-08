@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: acol-scada-records  datasource:    url: jdbc:mysql://localhost:3306/acolDataBase?characterEncoding=utf-8
+    username: dave
+    password: 756ZHANG
+    #com.microsoft.sqlserver.jdbc.SQLServerDriver
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 10000
+      filters: stat,wall,log4j
+  session:    store-type: none
+  jpa:    database: MYSQL
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl      ddl-auto: update
+server:  port: 9999
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.105.93.170:7001/eureka
+

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | FooTable</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
+								class="clear"> <span class="block m-t-xs"> <strong
+										class="font-bold">David Williams</strong>
+								</span> <span class="text-muted text-xs block">Art Director <b
+										class="caret"></b></span>
+							</span>
+							</a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">IN+</div>
+					</li>
+					<li>
+						<a><i class="fa fa-th-large"></i> <span class="nav-label">实时控制</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="#test.html">控制界面</a></li>
+						</ul>
+					</li>
+						
+				</ul>
+
+			</div>
+		</nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a7.jpg">
+                                </a>
+                                <div class="media-body">
+                                    <small class="pull-right">46h ago</small>
+                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a4.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right text-navy">5h ago</small>
+                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/profile.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right">23h ago</small>
+                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="mailbox.html">
+                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="profile.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>FooTable</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a>Tables</a>
+                        </li>
+                        <li class="active">
+                            <strong>FooTable</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>FooTable with row toggler, sorting and pagination</h5>
+
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">Config option 1</a>
+                                    </li>
+                                    <li><a href="#">Config option 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <table class="footable table table-stripped toggle-arrow-tiny">
+                                <thead>
+                                <tr>
+                                    <th data-toggle="true">设备编号</th>
+                                    <th data-hide="all">上传间隔</th>
+                                    <th data-hide="all">采集间隔</th>
+                                    <th data-hide="all">预处理修改价格</th>
+                                    <th data-hide="all">阀门控制</th>
+                                    <th data-hide="all">充值</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+	                                 <tr>
+	                                    <td>Gamma project</td>
+	                                    <td>Anna Jordan</td>
+	                                    <td>(016977) 0648</td>
+	                                    <td>Tellus Ltd</td>
+	                                    <td><span class="pie">4,9</span></td>
+	                                    <td>18%</td>
+	                                    <td>Jul 22, 2013</td>
+	                                    <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+	                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <ul class="pagination pull-right"></ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- FooTable -->
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+    var upTime = "<select id='upTime' data-placeholder='选择一天的上传次数' class='chosen-select' multiple style='width:350px;' tabindex='4'>"
+    	 +"<option value='120'> 12 </option>"
+    	 +"<option value='180'> 8 </option>"
+    	 +"<option value='240'> 6 </option>"
+    	 +"<option value='360'> 4 </option>"
+    	 +"<option value='480'> 3 </option>"
+    	 +"<option value='720'> 2 </option>"
+    	 +"<option value='1440'> 1 </option>"
+         +"</select>";
+    var colTime = "<select id='colTime' data-placeholder='选择采集间隔' class='chosen-select' multiple style='width:350px;' tabindex='4'>"
+    	 +"<option value='1'> 1 </option>"
+    	 +"<option value='5'> 5 </option>"
+    +"</select>";
+    var price = "<select id='price' data-placeholder='选择价格策略' class='chosen-select' multiple style='width:350px;' tabindex='4'>"
+   	 +"<option value='1'> 价格变为3元 且2分钟后变为6元 </option>"
+	 +"<option value='2'> 价格变为1.5元 且1分钟后变为3元 </option>"
+	 +"<option value='3'> 价格变为7.5元 且5分钟后变为4元 </option>"
+	 +"</select>";
+	
+	var statusValue = "<select id='status' data-placeholder='开关阀选择' class='chosen-select' multiple style='width:350px;' tabindex='4'>"
+	   	 +"<option value=true> 开阀 </option>"
+		 +"<option value=false> 关阀</option>"
+		 +"</select>";
+	var addMoney = "<input id='money' name='money' type='text'  placeholder='要充值的量'/><input id='hisMoney' type='text' placeholder='曾经充值的总量'/>";
+    
+	var deviceInfos;//界面显示的设备
+	
+	//需要删除设备时调用的方法
+	//需要添加设备时条用的方法
+	//收到的数据队列
+	function deviceHandler(delDevice,addDevice,data){
+		$.each(deviceInfos,function(i,device){ //实际显示的信息 
+			var flag = false;
+			$.each(data,function(index,item){ //需要显示的信息
+				if(item == device){
+					flag = true;//找到了
+					break;
+				}
+			})
+			if(flag==false){//不需要显示
+				delDevice(device);
+			}
+		})
+		$.each(data,function(i,device){ //需要显示的信息
+			var flag = false;
+			$.each(deviceInfos,function(index,item){//没有显示
+				if(item == device){
+					flag = true;//找到了
+					break;
+				}
+			})
+			if(flag==false){//没有显示
+				addDevice(device);
+			}
+		})
+		deviceInfos = data;//显示的就为需要显示的
+	}
+	function messageHandler(msg){
+		layer.msg(msg);
+	}
+	function uptime(device){
+		var mid = $("#"+device).children("#upTime").val();
+		postData("./testController/"+device+"/upTime",
+			JSON.stringify({
+        	'desUpTime': mid
+        	}),messageHandler);
+	}
+	function coltime(device){
+		var mid = $("#"+device).children("#colTime").val();
+		postData("./testController/"+device+"/colTime",
+				JSON.stringify({
+	        	'desColTime': mid
+	        	}),messageHandler);
+	}
+	function statusValue(device){
+		var mid = $("#"+device).children("#status").val();
+		postData("./testController/"+device+"/status",
+				JSON.stringify({
+	        	'statusValue': mid
+	        	}),messageHandler);
+	}
+	function closeCon(device){
+		 $.get("./testController/"+device+"/closeCon",function success(data){
+			 if(data.errorCode!=0){
+				 layer.msg("断开失败：" + data.message);
+			 }
+			 messageHandler(data.message);
+		 }
+	}
+	function addMoney(device){
+		var money = $("#"+device).children("#money").val();
+		var hismoney = $("#"+device).children("#hisMoney").val();
+		postData("./testController/"+device+"/addMoney",
+				JSON.stringify({
+	        	'desAddPlusSum': money,
+	        	'totalRecharge': hismoney
+	        	}),messageHandler);
+	}
+	function price(device){
+		var price = $("#"+device).children("#price").val();
+		if(price == 1){
+			p = 3;
+			e = 2;
+			ep = 6;
+		}else if(price=2){
+			p=1.5;
+			e = 1;
+			ep = 3;
+		}else{
+			p=7.5;
+			e = 5;
+			ep = 4;
+		}
+		postData("./testController/"+device+"/price",
+				JSON.stringify({
+	        	'price': p,
+	        	'exMin': e,
+	        	'exPrice': ep
+	        	}),messageHandler);
+	}
+	function addDevice(device){
+		var tr = "<tr id='"+device+"'>"+
+		"<td>"+device+"</td>"+
+		"<td>"+upTime+"<button onclick='uptime("+device+")'>确认 </button> </td>"+
+		"<td>"+colTime+"<button onclick='coltime("+device+")'> 确认 </button></td>"+
+		"<td>"+price+"<button onclick='price("+device+")'> 确认 </button></td>"+
+		"<td>"+statusValue+"<button onclick='statusValue("+device+")'>确认 </button> </td>"+
+		"<td>"+addMoney+"<button onclick='addMoney("+device+")'> 确认 </button></td>"+
+		"<td><button onclick='closeCon("+device+")'> 断开 </button></td>"+
+		"</tr>";
+		$("tbody").append(tr);
+	}
+	
+    $.get('./scada',function success(data){
+		deviceHandler(function(device){
+			$("#"+device).remove();
+		},
+		addDevice,
+		data);
+		$("tbody").append(  //此处向select中循环绑定数据
+		 		  trs);
+		  $(document).ready(function() {
+	            $('.footable').footable();
+	            $('.footable2').footable();
+	      });
+    }
+    
+  
+  	
+      
+
+    </script>
+
+</body>
+
+</html>

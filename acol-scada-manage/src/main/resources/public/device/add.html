@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Form Elements - Ace Admin</title>
+
+		<meta name="description" content="Common form elements and layouts" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../components/font-awesome/css/font-awesome.css" />
+
+		<!-- page specific plugin styles -->
+		
+		<link rel="stylesheet" href="../components/_mod/jquery-ui.custom/jquery-ui.custom.css" />
+		<link rel="stylesheet" href="../components/chosen/chosen.css" />
+		<link rel="stylesheet" href="../components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+		<link rel="stylesheet" href="../components/bootstrap-timepicker/css/bootstrap-timepicker.css" />
+		<link rel="stylesheet" href="../components/bootstrap-daterangepicker/daterangepicker.css" />
+		<link rel="stylesheet" href="../components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" />
+		<link rel="stylesheet" href="../components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="../assets/css/ace-skins.css" />
+		<link rel="stylesheet" href="../assets/css/ace-rtl.css" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="../assets/js/ace-extra.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="../components/html5shiv/dist/html5shiv.min.js"></script>
+		<script src="../components/respond/dest/respond.min.js"></script>
+		<![endif]-->
+	</head>
+<body>
+
+	<form class="form-horizontal" role="form">
+		<!-- #section:elements.form -->
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 设备编号: </label>
+				<div class="col-sm-9">
+					<input type="text" id="scaNum" placeholder="scaNum" class="col-xs-10 col-sm-5" />
+				</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 采集类型： </label>
+				<div class="col-sm-9">
+				 <select class="col-xs-10 col-sm-5" id="colType" data-placeholder="Choose a State...">
+					<option value="485"> 485 </option>
+					<option value="422"> 422 </option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="form-field-1">选择公司: </label>
+			<div class="col-xs-10 col-sm-5">
+				 <select class="chosen-select form-control" id="companys" data-placeholder="Choose a State...">
+					<option value="">  </option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="clearfix form-actions">
+			<div class="col-md-offset-3 col-md-9">
+				<button class="btn btn-info" type="button" onclick="subCompany()">
+					<i class="ace-icon fa fa-check bigger-110"></i>
+						Submit
+				</button>
+
+				&nbsp; &nbsp; &nbsp;
+				<button class="btn" type="reset">
+					<i class="ace-icon fa fa-undo bigger-110"></i>
+						Reset
+				</button>
+			</div>
+		</div>
+	</form>
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="../components/jquery/dist/jquery.js"></script>
+		<script src="../components/chosen/chosen.jquery.js"></script>
+		
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="../components/jquery.1x/dist/jquery.js"></script>
+<![endif]-->
+
+		<script type="text/javascript">
+		//var scripts = [null,"../components/chosen/chosen.jquery.js",null]
+			$.get('../company',function success(data){
+					//alert(data);
+					var option = "";
+					$.each(data, function(index, item) {
+						option+= "<option value='"+item.id+"'>" + item.companyName+ "</option>";
+					});
+					//alert(option);
+					 $("#companys").append(  //此处向select中循环绑定数据
+	         		  option);
+					 if(!ace.vars['touch']) {
+							$('.chosen-select').chosen({allow_single_deselect:true}); 
+							//resize the chosen on window resize
+							$(window)
+							.off('resize.chosen')
+							.on('resize.chosen', function() {
+								$('.chosen-select').each(function() {
+									 var $this = $(this);
+									 $this.next().css({'width': $this.parent().width()});
+								})
+							}).trigger('resize.chosen');
+							//resize chosen on sidebar collapse/expand
+							$(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+								if(event_name != 'sidebar_collapsed') return;
+								$('.chosen-select').each(function() {
+									 var $this = $(this);
+									 $this.next().css({'width': $this.parent().width()});
+								})
+							});
+						}
+				});
+			
+			function subCompany(){
+				var scaNum = $('#scaNum').val();
+				var colType = $('#colType').val();
+				var companys = $('#companys').val();
+				var company = {id:companys};
+				$.ajax({
+		            type: "post",
+		            url: "../scada",
+		            contentType: "application/json", //必须有
+		            dataType: "json", //表示返回值类型，不必须
+		            data: JSON.stringify({
+		            	'scaNum': scaNum,
+		            	'colType': colType,
+		            	'companyDto' : company
+		            	}),
+		            success: function (jsonResult) {
+		            	if(jsonResult.errorCode == 0){
+		            		 alert("添加成功");
+		            	}else{
+		            		alert(jsonResult.message);
+		            	}
+		            }
+		        });
+			}
+			
+			if('ontouchstart' in document.documentElement) document.write("<script src='../components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+		<script src="../components/bootstrap/dist/js/bootstrap.js"></script>
+		<!-- page specific plugin scripts -->
+		<script src="../components/_mod/bootstrap-duallistbox/jquery.bootstrap-duallistbox.js"></script>
+		<script src="../components/raty/lib/jquery.raty.js"></script>
+		<script src="../components/select2/dist/js/select2.js"></script>
+		<script src="../components/typeahead.js/dist/typeahead.jquery.js"></script>
+		<!-- ace scripts -->
+		<script src="../assets/js/src/elements.scroller.js"></script>
+		<script src="../assets/js/src/elements.colorpicker.js"></script>
+		<script src="../assets/js/src/elements.fileinput.js"></script>
+		<script src="../assets/js/src/elements.typeahead.js"></script>
+		<script src="../assets/js/src/elements.wysiwyg.js"></script>
+		<script src="../assets/js/src/elements.spinner.js"></script>
+		<script src="../assets/js/src/elements.treeview.js"></script>
+		<script src="../assets/js/src/elements.wizard.js"></script>
+		<script src="../assets/js/src/elements.aside.js"></script>
+		<script src="../assets/js/src/ace.js"></script>
+		<script src="../assets/js/src/ace.basics.js"></script>
+		<script src="../assets/js/src/ace.scrolltop.js"></script>
+		<script src="../assets/js/src/ace.ajax-content.js"></script>
+		<script src="../assets/js/src/ace.touch-drag.js"></script>
+		<script src="../assets/js/src/ace.sidebar.js"></script>
+		<script src="../assets/js/src/ace.sidebar-scroll-1.js"></script>
+		<script src="../assets/js/src/ace.submenu-hover.js"></script>
+		<script src="../assets/js/src/ace.widget-box.js"></script>
+		<script src="../assets/js/src/ace.settings.js"></script>
+		<script src="../assets/js/src/ace.settings-rtl.js"></script>
+		<script src="../assets/js/src/ace.settings-skin.js"></script>
+		<script src="../assets/js/src/ace.widget-on-reload.js"></script>
+		<script src="../assets/js/src/ace.searchbox-autocomplete.js"></script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($){
+			    var demo1 = $('select[name="duallistbox_demo1[]"]').bootstrapDualListbox({infoTextFiltered: '<span class="label label-purple label-lg">Filtered</span>'});
+				var container1 = demo1.bootstrapDualListbox('getContainer');
+				container1.find('.btn').addClass('btn-white btn-info btn-bold');
+			
+				/**var setRatingColors = function() {
+					$(this).find('.star-on-png,.star-half-png').addClass('orange2').removeClass('grey');
+					$(this).find('.star-off-png').removeClass('orange2').addClass('grey');
+				}*/
+				$('.rating').raty({
+					'cancel' : true,
+					'half': true,
+					'starType' : 'i'
+					/**,
+					
+					'click': function() {
+						setRatingColors.call(this);
+					},
+					'mouseover': function() {
+						setRatingColors.call(this);
+					},
+					'mouseout': function() {
+						setRatingColors.call(this);
+					}*/
+				})//.find('i:not(.star-raty)').addClass('grey');
+				
+				
+				
+				//////////////////
+				//select2
+				$('.select2').css('width','200px').select2({allowClear:true})
+				$('#select2-multiple-style .btn').on('click', function(e){
+					var target = $(this).find('input[type=radio]');
+					var which = parseInt(target.val());
+					if(which == 2) $('.select2').addClass('tag-input-style');
+					 else $('.select2').removeClass('tag-input-style');
+				});
+				
+				//////////////////
+				//在这里原本
+			
+				
+				///////////////////
+					
+				//typeahead.js
+				//example taken from plugin's page at: https://twitter.github.io/typeahead.js/examples/
+				var substringMatcher = function(strs) {
+					return function findMatches(q, cb) {
+						var matches, substringRegex;
+					 
+						// an array that will be populated with substring matches
+						matches = [];
+					 
+						// regex used to determine if a string contains the substring `q`
+						substrRegex = new RegExp(q, 'i');
+					 
+						// iterate through the pool of strings and for any string that
+						// contains the substring `q`, add it to the `matches` array
+						$.each(strs, function(i, str) {
+							if (substrRegex.test(str)) {
+								// the typeahead jQuery plugin expects suggestions to a
+								// JavaScript object, refer to typeahead docs for more info
+								matches.push({ value: str });
+							}
+						});
+			
+						cb(matches);
+					}
+				 }
+			
+				 $('input.typeahead').typeahead({
+					hint: true,
+					highlight: true,
+					minLength: 1
+				 }, {
+					name: 'states',
+					displayKey: 'value',
+					source: substringMatcher(ace.vars['US_STATES']),
+					limit: 10
+				 });
+			});
+		</script>
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="../assets/css/ace.onpage-help.css" />
+		<link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" />
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="../assets/js/src/elements.onpage-help.js"></script>
+		<script src="../assets/js/src/ace.onpage-help.js"></script>
+		<script src="../docs/assets/js/rainbow.js"></script>
+		<script src="../docs/assets/js/language/generic.js"></script>
+		<script src="../docs/assets/js/language/html.js"></script>
+		<script src="../docs/assets/js/language/css.js"></script>
+		<script src="../docs/assets/js/language/javascript.js"></script>
+	</body>
+</body>
+</html>

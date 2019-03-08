@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>上海埃科临时演示页面</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!--  -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="css/plugins/steps/jquery.steps.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!--  
+
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+<link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">-->
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
+								class="clear"> <span class="block m-t-xs"> <strong
+										class="font-bold">David Williams</strong>
+								</span> <span class="text-muted text-xs block">Art Director <b
+										class="caret"></b></span>
+							</span>
+							</a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">IN+</div>
+					</li>
+					<li class="active">
+						
+						<a><i class="fa fa-th-large"></i> <span class="nav-label">设备管理</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="scadaInfor.html">设备信息</a></li>
+							<li><a href="scadaController.html">设备远程控制</a></li>
+						</ul>
+					</li>
+					
+					<li class="active">
+						<a><i class="fa fa-user"></i> <span class="nav-label">管理员</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="admin.html">快速添加设备</a></li>
+							<li><a href="price.html">价格方案制定</a></li>
+						</ul>
+					</li>
+						
+				</ul>
+
+			</div>
+		</nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top white-bg" role="navigation"
+					style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+							href="#"><i class="fa fa-bars"></i> </a>
+						<form role="search" class="navbar-form-custom" method="post"
+							action="#">
+							<div class="form-group">
+								<input type="text" placeholder="Search for something..."
+									class="form-control" name="top-search" id="top-search">
+							</div>
+						</form>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li><a href="#"> <i class="fa fa-sign-out"></i> Log out
+						</a></li>
+					</ul>
+
+				</nav>
+			</div>
+			<!-- <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center m-t-lg">
+                        <h1>
+                            Simple example of second view
+                        </h1>
+                        <small>Writen in minor.html file.</small>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>设备整体运行情况信息展示</h2>
+					<ol class="breadcrumb">
+						<li><a href="index.html">设备管理</a></li>
+						<li><a>设备信息</a></li>
+						<li class="active"><strong>信息展示</strong></li>
+					</ol>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+			<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+					  <div class="col-lg-12">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>添加常用价格方案</h5>
+								<div class="ibox-tools">
+									<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+									</a> <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+										<i class="fa fa-wrench"></i>
+									</a>
+									<ul class="dropdown-menu dropdown-user">
+										<li><a href="#">将所有设备初始化为出厂设置</a></li>
+									</ul>
+									<a class="close-link"> <i class="fa fa-times"></i>
+									</a>
+								</div>
+							</div>
+							
+							<div class="ibox-content">
+		                       <h2>
+                                	气量方案填写
+                           	   </h2>
+                            <p>
+                                  	仔细了解模式后再进行填写
+                            </p>
+                            <form id="gasMode" action="#" class="wizard-big">
+                            	
+                                <h1>方案填写</h1>
+                                <fieldset>
+                                    <h2>气量方案基本信息填写</h2>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="form-group">
+                                                <label>方案名称  *</label>
+                                                <input id="gasName" name="gasName" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group" id="gasPriceStartTime">
+				                                <label class="font-normal">执行此价格的开始时间  *</label>
+				                                <div class="input-group date">
+				                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="gasStartTime" type="text" class="form-control" value="01/17/2018">
+				                                </div>
+				                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="text-center">
+                                                <div style="margin-top: 20px">
+                                                    <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                               	 <h1>填写错误</h1>
+                                <fieldset>
+                                    <div class="text-center" style="margin-top: 120px">
+                                        <h2><br>气量价格模式： </br>
+                                        	<br>1.填写的名称：用于模式选择中</br>
+                                        	<br>2.执行时间： 如果希望设备马上执行选择一个过去的时间</br>
+                                        	<br>3.如果未来计划从金额变为气量模式： 选择计划执行的时间</br>
+                                        </h2>
+                                    </div>
+                                </fieldset>
+
+                                <h1>完成</h1>
+                                <fieldset>
+                                    <h2>提交方案</h2>
+                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">我已了解常规价格运行模式并正确的填写了气量方案</label>
+                                </fieldset>
+                            </form>
+		                    </div>
+		                    
+		                    
+							<div class="ibox-content">
+		                       <h2>
+                                	常规价格填写
+                            </h2>
+                            <p>
+                                  	仔细阅读模式后再进行填写
+                            </p>
+                            <form id="normalPrice" action="#" class="wizard-big">
+                            	
+                                <h1>方案填写</h1>
+                                <fieldset>
+                                    <h2>价格方案基本信息填写</h2>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="form-group">
+                                                <label>方案名称  *</label>
+                                                <input id="priceName" name="priceName" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>价格  *</label>
+                                                <input id="price" name="price" type="text" class="form-control required">
+                                            </div>
+                                            <div>
+                                            	<input name="priceType" type="hidden" value="Normal"/>
+                                            </div>
+                                            <div class="form-group" id="normalPriceStartTime">
+				                                <label class="font-normal">执行此价格的开始时间</label>
+				                                <div class="input-group date">
+				                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="normalsTime" type="text" class="form-control" value="01/17/2018">
+				                                </div>
+				                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="text-center">
+                                                <div style="margin-top: 20px">
+                                                    <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                               	 <h1>填写错误</h1>
+                                <fieldset>
+                                    <div class="text-center" style="margin-top: 120px">
+                                        <h2><br>常规价格模式： </br>
+                                        	<br>1.填写的名称：将用于对IC设备选择价格模式时请使用易懂且不重复的名称</br>
+                                        	<br>2.填写的价格： 单位   元/立方米 (大于0的数字可为小数) </br>
+                                        	<br>3.执行时间： 如果希望IC立刻使用该填写的价格  则使用一个过去的时间</br></h2>
+                                    </div>
+                                </fieldset>
+
+                                <h1>完成</h1>
+                                <fieldset>
+                                    <h2>提交方案</h2>
+                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">我已了解常规价格运行模式并正确的填写了价格方案</label>
+                                </fieldset>
+                            </form>
+		                    </div>
+						</div>
+						<div>
+							
+						</div>
+						
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>添加阶梯格价</h5>
+								<div class="ibox-tools">
+									<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+									</a> <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+										<i class="fa fa-wrench"></i>
+									</a>
+									<ul class="dropdown-menu dropdown-user">
+										<li><a href="#">将所有设备初始化为出厂设置</a></li>
+
+									</ul>
+									<a class="close-link"> <i class="fa fa-times"></i>
+									</a>
+								</div>
+							</div>
+							
+							
+							<div class="ibox-content">
+		                        <p>
+		                            This is basic example of Step
+		                        </p>
+		                        <div id="stepPrice">
+		                            <h1>First Step</h1>
+		                            <div class="step-content">
+		                                <div class="text-center m-t-md">
+		                                <h2>Hello in Step 1</h2>
+		                                <p>
+		                                    This is the first content.
+		                                </p>
+		                                </div>
+		                            </div>
+		
+		                            <h1>Second Step</h1>
+		                            <div class="step-content">
+		                                <div class="text-center m-t-md">
+		                                    <h2>This is step 2</h2>
+		                                    <p>
+		                                        This content is diferent than the first one.
+		                                    </p>
+		                                </div>
+		                            </div>
+		
+		                            <h1>Third Step</h1>
+		                            <div class="step-content">
+		                                <div class="text-center m-t-md">
+		                                    <h2>This is step 3</h2>
+		                                    <p>
+		                                        This is last content.
+		                                    </p>
+		                                </div>
+		                            </div>
+		                        </div>
+		
+		                    </div>
+						</div>
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>添加季节价格</h5>
+								<div class="ibox-tools">
+									<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+									</a> <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+										<i class="fa fa-wrench"></i>
+									</a>
+									<ul class="dropdown-menu dropdown-user">
+										<li><a href="#">将所有设备初始化为出厂设置</a></li>
+
+									</ul>
+									<a class="close-link"> <i class="fa fa-times"></i>
+									</a>
+								</div>
+							</div>
+							
+							
+							<div class="ibox-content">
+		                        <p>
+		                            This is basic example of Step
+		                        </p>
+		                        <div id="seasonPrice">
+		                            <h1></h1>
+		                            <div class="step-content">
+		                                <div class="text-center m-t-md">
+		                                <h2>Hello in Step 1</h2>
+		                                <p>
+		                                    This is the first content.
+		                                </p>
+		                                </div>
+		                            </div>
+		
+		                            <h1>Second Step</h1>
+		                            <div class="step-content">
+		                                <div class="text-center m-t-md">
+		                                    <h2>This is step 2</h2>
+		                                    <p>
+		                                        This content is diferent than the first one.
+		                                    </p>
+		                                </div>
+		                            </div>
+		
+		                            <h1>Third Step</h1>
+		                            <div class="step-content">
+		                                <div class="text-center m-t-md">
+		                                    <h2>This is step 3</h2>
+		                                    <p>
+		                                        This is last content.
+		                                    </p>
+		                                </div>
+		                            </div>
+		                        </div>
+		
+		                    </div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+			</div>
+			<div class="footer">
+				<div class="pull-right">
+					10GB of <strong>250GB</strong> Free.
+				</div>
+				<div>
+					<strong>Copyright</strong> Example Company &copy; 2014-2017
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Mainly scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+	<!-- Custom and plugin javascript -->
+	<script src="js/inspinia.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+	
+	<!-- Steps -->
+    <script src="js/plugins/steps/jquery.steps.min.js"></script>
+    <!-- Data picker -->
+   <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <!-- Jquery Validate -->
+    <script src="js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="js/core.js"></script>
+    
+    <script src="js/core.js"></script>
+	<!-- Page-Level Scripts -->
+	<script type="text/javascript">
+		var lock = false;
+	
+		$(document).ready(function(){
+			$("#gasMode").steps({
+		        bodyTag: "fieldset",
+		        onStepChanging: function (event, currentIndex, newIndex) 
+		        {
+		            // Always allow going backward even if the current step contains invalid fields!
+		            if (currentIndex > newIndex)
+		            {
+		                return true;
+		            }
+
+		            var form = $(this);
+
+		            // Clean up if user went backward before
+		            if (currentIndex < newIndex)
+		            {
+		                // To remove error styles
+		                $(".body:eq(" + newIndex + ") label.error", form).remove();
+		                $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+		            }
+
+		            // Disable validation on fields that are disabled or hidden.
+		            form.validate().settings.ignore = ":disabled,:hidden";
+
+		            // Start validation; Prevent going forward if false
+		            return form.valid();
+		        },
+		        onStepChanged: function (event, currentIndex, priorIndex)
+		        {
+		            // Suppress (skip) "Warning" step if the user is old enough.
+		            if (currentIndex === 1 && priorIndex==0)
+		            {
+		                $(this).steps("next");
+		            }
+		            // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+		            if (currentIndex === 1 && priorIndex === 2)
+		            {
+		                $(this).steps("previous");
+		            }
+		        },
+		        onFinishing: function (event, currentIndex)
+		        {
+		            var form = $(this);
+
+		            // Disable validation on fields that are disabled.
+		            // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+		            form.validate().settings.ignore = ":disabled";
+
+		            // Start validation; Prevent form submission if false
+		            return form.valid();
+		        },
+		        onFinished: function (event, currentIndex)
+		        {
+		        	
+		        	if(lock){
+		        		layer.msg('正在处理中，请耐心等待服务器响应');
+		        		return;
+		        	}
+		        	lock = true;
+		        	var planName = $('#gasName').val();
+					var time = $('#gasStartTime').val();
+					
+					$.ajax({
+			            type: "post",
+			            url: "./price",
+			            contentType: "application/json", //必须有
+			            dataType: "json", //表示返回值类型，不必须
+			            data: JSON.stringify({
+			            	'planName': planName,
+			            	'priceType': 'Gas',
+			            	'exDate' : date(time)
+			            	}), 
+			            success: function (jsonResult) {
+			            	responseHandler(jsonResult);
+			            	lock = false;
+			            }
+			        });
+		        }
+		    }).validate({
+		                errorPlacement: function (error, element)
+		                {
+		                    element.before(error);
+		                },
+		                rules: {
+		                    confirm: {
+		                        equalTo: "#password"
+		                    }
+		                }
+		            });
+			$("#normalPrice").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex) 
+                {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex)
+                    {
+                        return true;
+                    }
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex)
+                    {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex)
+                {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 1 && priorIndex==0 && checkNum($("#price").val()) && $("#price").val()>0)
+                    {
+                        $(this).steps("next");
+                    }
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 1 && priorIndex === 2)
+                    {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex)
+                {
+                  /*  var form = $(this);
+                    // Submit form input
+                    form.submit();*/
+                	if(lock){
+		        		layer.msg('正在处理中，请耐心等待服务器响应');
+		        		return;
+		        	}
+		        	lock = true;
+		        	var planName = $('#priceName').val();
+		        	var price =  $('#price').val();
+					var time = $('#normalsTime').val();
+					$.ajax({
+			            type: "post",
+			            url: "./price",
+			            contentType: "application/json", //必须有
+			            dataType: "json", //表示返回值类型，不必须
+			            data: JSON.stringify({
+			            	'planName': planName,
+			            	'priceType': 'Normal',
+			            	'price': price,
+			            	'exDate' : date(time)
+			            	}),
+			            success: function (jsonResult) {
+			            	responseHandler(jsonResult);
+			            	lock = false;
+			            }
+			        });
+                    
+                }
+            }).validate({
+                        errorPlacement: function (error, element)
+                        {
+                            element.before(error);
+                        },
+                        rules: {
+                            confirm: {
+                                equalTo: "#password"
+                            }
+                        }
+                    });
+	        $("#stepPrice").steps();
+	        $("#seasonPrice").steps();
+	        
+	        $('#normalPriceStartTime .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+	        $('#gasPriceStartTime .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+	        
+	   });
+    </script>
+
+</body>
+
+</html>

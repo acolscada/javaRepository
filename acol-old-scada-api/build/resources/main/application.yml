@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: acol-old-scada-api  datasource:
+    druid:
+      primary: 
+        url: jdbc:jtds:sqlserver://112.65.214.63:1433;databaseName=Meter2015;encrypt = true;trustServerCertificate=true;
+        username: acol
+        password: lzhlmcl1hblsqt
+        #com.microsoft.sqlserver.jdbc.SQLServerDriver
+        driver-class-name: net.sourceforge.jtds.jdbc.Driver
+        initial-size: 2
+        min-idle: 2
+        max-active: 5
+        max-wait: 10000
+        filters: stat,wall,log4j
+      secondary: 
+        url: jdbc:jtds:sqlserver://112.65.214.63:1433;databaseName=MeterLog;encrypt = true;trustServerCertificate=true;
+        username: acol
+        password: lzhlmcl1hblsqt
+        #com.microsoft.sqlserver.jdbc.SQLServerDriver
+        driver-class-name: net.sourceforge.jtds.jdbc.Driver
+        initial-size: 2
+        min-idle: 2
+        max-active: 5
+        max-wait: 10000
+        filters: stat,wall,log4j      
+  session:    store-type: none
+  jpa:    database: sql-server
+    show-sql: true
+    database-platform: org.hibernate.dialect.SQLServer2005Dialect
+    hibernate:
+      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl      #ddl-auto: update
+server:  port: 10001eureka:
+  instance:    instance-id: acol-old-scada-api
+    prefer-ip-address: true  client:    service-url:      defaultZone: http://47.105.93.170:7001/eureka
+info:
+  app.name: old-scada-api
+  company.name: www.acolscada.cn
+  app.api-help: swagger-ui.html
+  
+#security:
+  #oauth2:
+    #client:
+      #clientId: acol
+      #clientSecret: acolsecurity
+      

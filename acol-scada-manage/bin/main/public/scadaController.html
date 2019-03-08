@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>上海埃科临时演示页面</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">-->
+ <!--  <link href="css/animate.css" rel="stylesheet">-->
+<link href="css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
+								class="clear"> <span class="block m-t-xs"> <strong
+										class="font-bold">superAdmin</strong>
+								</span> <span class="text-muted text-xs block">操作 <b
+										class="caret"></b></span>
+							</span>
+							</a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a href="./logout">注销</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">IN+</div>
+					</li>
+					<li class="active">
+						
+						<a><i class="fa fa-th-large"></i> <span class="nav-label">设备管理</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="scadaInfor.html">设备信息</a></li>
+							<li><a href="scadaController.html">设备远程控制</a></li>
+						</ul>
+					</li>
+					
+					<li class="active">
+						<a><i class="fa fa-user"></i> <span class="nav-label">管理员</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="admin.html">快速添加设备</a></li>
+							<li><a href="price.html">价格方案制定</a></li>
+						</ul>
+					</li>
+						
+				</ul>
+
+			</div>
+		</nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top white-bg" role="navigation"
+					style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+							href="#"><i class="fa fa-bars"></i> </a>
+						<form role="search" class="navbar-form-custom" method="post"
+							action="#">
+							<div class="form-group">
+								<input type="text" placeholder=""
+									class="form-control" name="top-search" id="top-search">
+							</div>
+						</form>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li><a href="./logout"> <i class="fa fa-sign-out"></i> 注销
+						</a></li>
+					</ul>
+
+				</nav>
+			</div>
+			<!-- <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center m-t-lg">
+                        <h1>
+                            Simple example of second view
+                        </h1>
+                        <small>Writen in minor.html file.</small>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>设备整体运行情况信息展示</h2>
+					<ol class="breadcrumb">
+						<li><a href="index.html">设备管理</a></li>
+						<li><a>设备信息</a></li>
+						<li class="active"><strong>信息展示</strong></li>
+					</ol>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+			
+			
+			<div class="wrapper wrapper-content  animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                
+                 <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>采集器参数信息修改</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <p>
+                                <strong>使用介绍</strong>  常规操作流程：  数据展示窗口左下角的搜索工具按照设备输入设备编号
+                                	进行数据的筛选后, 选中需要修改的行, 再次点击左下角的修改工具设置参数方可
+                                <a target="_blank" href="">支持(Autho2.0 授权认证)+restful 风格API 对设备进行远程监控  如需接入可联系埃科技术部</a>
+                            </p>
+                            
+                            <h4>参数表</h4>
+                            <p>
+
+                            </p>
+
+                            <div class="jqGrid_wrapper">
+                                <table id="table_list_2"></table>
+                                <div id="pager_list_2"></div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                   
+                    
+                </div>
+            </div>
+        </div>
+			
+			<div class="footer">
+				<div class="pull-right">
+					沪公网安备  <strong>31011702000479</strong> 号
+				</div>
+				<div>
+					公司名 <strong>上海埃科燃气测控设备有限公司</strong> &copy; 2000-2019
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	 <!-- Mainly scripts -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script> 
+   
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+
+    <!-- Peity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peity/3.3.0/jquery.peity.min.js"></script>
+
+    <!-- jqGrid -->
+    <script src="js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/js/jquery.jqGrid.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+    <script src="js/core.js"></script>
+	<script type="text/javascript">
+	function status(deviceNum,value){
+		//alert("deviceNum: "+deviceNum +"value: "+value);
+		layer.confirm('确定要强制操作?',{
+		btn:['确定','取消']},
+		function(){
+			$.get('./scada/'+deviceNum+'/status/'+value,function success(data){
+				responseHandler(data);
+			});
+		},function(){
+			$.get('./scada/'+deviceNum+'/status/'+value,function success(data){
+				responseHandler(data);
+			});
+		}
+		);
+	
+	}
+	
+	 $(document).ready(function () {
+		
+		 $.ajaxSettings.async = false;
+		 var sValue = "-1:不需要改变价格;";
+		 	 $.get('./price',function success(data){
+				$.each(data, function(index, item) {
+					sValue+=item.id+":" + item.planName+";";
+				});
+		 		sValue = sValue.substr(0, sValue.length - 1);
+		});
+		function statusFormatter(cellValue){
+			if(cellValue == true){
+				return "开阀";
+			}else{
+				return "关阀";
+			}
+		}
+		function priceFormatter(cellValue){
+			var data = sValue.split(";");
+			for(var i=0;i<data.length;i++){
+				var buffer = data[i].split(":");
+				if(buffer[0] == cellValue){
+					return buffer[1];
+				}
+			}
+			return "不需要改变价格";
+		}
+		/* $.get('./scada/params',function success(data){
+			$.each(data, function(index, item) {
+				
+				if(item.exPricePlanDto != null){
+					item.exPricePlanDto.id = item.exPricePlanDto.planName;
+				}
+				jsonData.push(item);
+			});
+		});*/
+		function statusOpenButton(cellValue,options,rowObject){
+			return "<a class='btn btn-warning btn-rounded' onclick='status(\""+rowObject.deviceNum+"\",true)'>强制开阀</a>";
+		}
+		function statusCloseButton(cellValue,options,rowObject){
+			return "<a class='btn btn-warning btn-rounded' onclick='status(\""+rowObject.deviceNum+"\",false)'>强制关阀</a>";
+		}
+	
+         $("#table_list_2").jqGrid({
+        	 url : "./scada/params",
+			 mtype : 'GET',
+			 datatype: 'JSON',
+             height: 450,
+             autowidth: true,
+             shrinkToFit: true,
+             rowNum: 20,
+             rowList: [10, 20, 30],
+             colNames:['Id','设备号', '上传间隔', '采集器间隔','价格方案','阀门状态','剩余气量','待充值量','上传间隔', '采集器间隔','价格方案','阀门状态','强制开阀','强制关阀'],
+             colModel:[
+                 {name:'id',index:'id', editable: false, width:60, sorttype:"int",search:false},
+                 {name:'deviceNum',index:'deviceNum', editable: true, width:90,sorttype:"text",search:true},
+                 {name:'upTime',index:'upTime', editable: false, width:100,sorttype:"int"},
+                 {name:'colTime',index:'colTime', editable: false, width:80,sorttype:"int"},
+                 {name:'pricePlanDto.planName',index:'pricePlanDto.planName', width:90, editable: false,edittype:"select",editoptions:{value:sValue}},
+                 {name:'valueStatus',index:'valueStatus', editable: false, formatter:statusFormatter,width:80},
+                 {name:'surplusSum', index:'surplusSum', width:80,sorttype:"float",editable: false,hidden:true},
+                 {name:'desAddPlusSum', index:'desAddPlusSum', width:80,sorttype:"float",editable: true},
+                 {name:'desUpTime',index:'desUpTime', editrules: { edithidden: true }, editable: true, width:100,sorttype:"int",hidden:true},
+                 {name:'desColTime',index:'desColTime', editrules: { edithidden: true }, editable: true, width:80,sorttype:"int",hidden:true},
+                 {name:'exPricePlanDto.id',index:'exPricePlanDto.id', editrules: { edithidden: true }, width:90, editable: true,edittype:"select",editoptions:{value:sValue},formatter:priceFormatter,hidden:true},
+                 {name:'desValueStatus',index:'desValueStatus', editrules: { edithidden: true }, editable: true, width:80,edittype:"select",editoptions: {value:"true:开阀;false:关阀"},formatter:statusFormatter,hidden:true},
+                 {name:'',index:'operate', editable: false, width:80, align:'center', formatter:statusOpenButton},
+                 {name:'',index:'operate',  editable: false, width:80,align:'center',formatter: statusCloseButton}
+             ],
+             pager: "#pager_list_2",
+             editurl: "./scada/params",//nothing is saved
+             viewrecords: true,
+             caption: "设备当前参数状态",
+             add: true,
+             edit: true,
+             addtext: 'Add',
+             edittext: 'Edit',
+             hidegrid: false
+         });
+         // Add selection
+         $("#table_list_2").setSelection(4, true);
+         // Setup buttons
+         $("#table_list_2").jqGrid('navGrid', '#pager_list_2',
+                 {edit: true, add: false, del: false, search: true},
+                 {height: 270, reloadAfterSubmit: true}
+         );
+
+         // Add responsive to jqGrid
+         $(window).bind('resize', function () {
+             var width = $('.jqGrid_wrapper').width();
+             $('#table_list_2').setGridWidth(width);
+         });
+         setTimeout(function(){
+             $('.wrapper-content').removeClass('animated fadeInRight');
+         },700);
+     });
+
+    </script>
+
+</body>
+
+</html>

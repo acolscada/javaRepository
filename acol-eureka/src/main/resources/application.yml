@@ -1,0 +1,12 @@
+server:
+  port: 7001
+ 
+eureka:
+  #server.enable-self-preservation: false 自我保护
+  instance:
+    hostname: 47.105.93.170
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    servicerl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

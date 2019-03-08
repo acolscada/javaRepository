@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>上海埃科临时演示页面</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link href="css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+
+
+<link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-treegrid/0.2.0/css/jquery.treegrid.min.css">
+<!-- 
+    <link href="css/plugins/jqGrid/ui.jqgrid.css" rel="stylesheet"> -->
+<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
+								class="clear"> <span class="block m-t-xs"> <strong
+										class="font-bold">superAdmin</strong>
+								</span> <span class="text-muted text-xs block">操作 <b
+										class="caret"></b></span>
+							</span>
+							</a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">IN+</div>
+					</li>
+					<li class="active">
+						
+						<a><i class="fa fa-th-large"></i> <span class="nav-label">设备管理</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="scadaInfor.html">设备信息</a></li>
+							<li><a href="scadaController.html">设备远程控制</a></li>
+						</ul>
+					</li>
+					
+					<li class="active">
+						<a><i class="fa fa-user"></i> <span class="nav-label">管理员</span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="admin.html">快速添加设备</a></li>
+							<li><a href="price.html">价格方案制定</a></li>
+						</ul>
+					</li>
+						
+				</ul>
+
+			</div>
+		</nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top white-bg" role="navigation"
+					style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+							href="#"><i class="fa fa-bars"></i> </a>
+						<form role="search" class="navbar-form-custom" method="post"
+							action="#">
+							<div class="form-group">
+								<input type="text" placeholder="Search for something..."
+									class="form-control" name="top-search" id="top-search">
+							</div>
+						</form>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li><a href="#"> <i class="fa fa-sign-out"></i> Log out
+						</a></li>
+					</ul>
+
+				</nav>
+			</div>
+			<!-- <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center m-t-lg">
+                        <h1>
+                            Simple example of second view
+                        </h1>
+                        <small>Writen in minor.html file.</small>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>设备整体运行情况信息展示</h2>
+					<ol class="breadcrumb">
+						<li><a href="index.html">设备管理</a></li>
+						<li><a>设备信息</a></li>
+						<li class="active"><strong>信息展示</strong></li>
+					</ol>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+			
+			
+			<div class="wrapper wrapper-content  animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                
+                 <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>采集器参数信息修改</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <p>
+                                <strong>使用介绍</strong>  常规操作流程：  数据展示窗口左下角的搜索工具按照设备输入设备编号
+                                	进行数据的筛选后, 选中需要修改的行, 再次点击左下角的修改工具设置参数方可
+                                <a target="_blank" href="">支持(Autho2.0 授权认证)+restful 风格API 对设备进行远程监控  如需接入可联系埃科技术部</a>
+                            </p>
+                            
+                            <h4>参数表</h4>
+                            <p>
+
+                            </p>
+
+                            <div class="jqGrid_wrapper">
+                               <!--  <table id="table_list_2"></table>--> 
+                               
+                               <table id="table"></table>
+                             <!--   <br/>
+    							<button onclick="test()">选择</button>
+                                <div id="pager_list_2"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                   
+                   
+                    
+                </div>
+            </div>
+        </div>
+			<div class="footer">
+				<div class="pull-right">
+					沪公网安备  <strong>31011702000479</strong> 号
+				</div>
+				<div>
+					公司名 <strong>上海埃科燃气测控设备有限公司</strong> &copy; 2000-2019
+				</div>
+			</div>
+		</div>
+	</div>
+
+	 <!-- Mainly scripts -->
+	
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script> 
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+     
+     <!-- bootstrap-table-treegrid -->
+     <script src="https://cdn.bootcss.com/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+	 <script src="https://cdn.bootcss.com/bootstrap-table/1.12.0/extensions/treegrid/bootstrap-table-treegrid.js"></script>
+	 <script src="https://cdn.bootcss.com/jquery-treegrid/0.2.0/js/jquery.treegrid.min.js"></script>
+     
+   
+
+    <!-- Peity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peity/3.3.0/jquery.peity.min.js"></script>
+
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+    
+    
+    
+    <script src="js/core.js"></script>
+	<script type="text/javascript">
+	
+	 var $table = $('#table');
+	    /*var data = JSON.parse(
+	        '[{"id":1,"pid":0,"status":1,"name":"用户管理","permissionValue":"open:user:manage"},' +
+	        '{"id":2,"pid":0,"status":1,"name":"系统管理","permissionValue":"open:system:manage"},' +
+	        '{"id":3,"pid":1,"status":1,"name":"新增用户","permissionValue":"open:user:add"},' +
+	        '{"id":4,"pid":1,"status":1,"name":"修改用户","permissionValue":"open:user:edit"},' +
+	        '{"id":5,"pid":1,"status":0,"name":"删除用户","permissionValue":"open:user:del"},' +
+	        '{"id":6,"pid":2,"status":1,"name":"系统配置管理","permissionValue":"open:systemconfig:manage"},' +
+	        '{"id":7,"pid":6,"status":1,"name":"新增配置","permissionValue":"open:systemconfig:add"},' +
+	        '{"id":8,"pid":6,"status":1,"name":"修改配置","permissionValue":"open:systemconfig:edit"},' +
+	        '{"id":9,"pid":6,"status":0,"name":"删除配置","permissionValue":"open:systemconfig:del"},' +
+	        '{"id":10,"pid":2,"status":1,"name":"系统日志管理","permissionValue":"open:log:manage"},' +
+	        '{"id":11,"pid":10,"status":1,"name":"新增日志","permissionValue":"open:log:add"},' +
+	        '{"id":12,"pid":10,"status":1,"name":"修改日志","permissionValue":"open:log:edit"},' +
+	        '{"id":13,"pid":10,"status":0,"name":"删除日志","permissionValue":"open:log:del"},'+
+	        '{"id":15,"pid":14,"status":0,"name":"删除日志","permissionValue":"open:log:del"},'+
+	        '{"id":16,"pid":15,"status":0,"name":"删除日志","permissionValue":"open:log:del"},'+
+	        '{"id":17,"pid":16,"status":0,"name":"删除日志","permissionValue":"open:log:del"},'+
+	        '{"id":14,"pid":3,"status":1,"name":"新增用户","permissionValue":"open:user:add"}]');*/
+	 // 格式化按钮
+	    function operateFormatter(value, row, index) {
+	        return [
+	            '<button type="button" class="resourceOfadd btn-small  btn-primary" style="margin-right:15px;"><i class="fa fa-plus" ></i>&nbsp;新增</button>',
+	            '<button type="button" class="resourceOfedit btn-small   btn-primary" style="margin-right:15px;"><i class="fa fa-pencil-square-o" ></i>&nbsp;修改</button>',
+	            '<button type="button" class="resourceOfdelete btn-small   btn-primary" style="margin-right:15px;"><i class="fa fa-trash-o" ></i>&nbsp;删除</button>'
+	        ].join('');
+	    }
+	    function iconFormatter(value,row,index){
+	    	return "<i class='"+value+"'></i>";
+	    }
+	    // 格式化类型
+	    function typeFormatter(value, row, index) {
+	        if (value === 'menu') {  return '菜单';  }
+	        if (value === 'button') {  return '按钮'; }
+	        if (value === 'api') {  return '接口'; }
+	        return '-';
+	    }
+	    // 格式化状态
+	    function statusFormatter(value, row, index) {
+	        if (value === 1) {
+	            return '<span class="label label-success">正常</span>';
+	        } else {
+	            return '<span class="label label-default">锁定</span>';
+	        }
+	    }
+
+	    //初始化操作按钮的方法
+	    window.operateEvents = {
+	        'click .resourceOfadd': function (e, value, row, index) {
+	        	alert(row.id);
+	            add(row.id);
+	        },
+	        'click .resourceOfdelete': function (e, value, row, index) {
+	        	deleteObject("./resource/"+row.id);
+	        },
+	        'click .resourceOfedit': function (e, value, row, index) {
+	            update(row.id);
+	        }
+	    };
+	</script>
+	<script>
+	    /**
+	     * 选中父项时，同时选中子项
+	     * @param datas 所有的数据
+	     * @param row 当前数据
+	     * @param id id 字段名
+	     * @param pid 父id字段名
+	     */
+	    function selectChilds(datas,row,id,pid,checked) {
+	        for(var i in datas){
+	            if(datas[i][pid] == row[id]){
+	                datas[i].check=checked;
+	                selectChilds(datas,datas[i],id,pid,checked);
+	            };
+	        }
+	    }
+
+	    function selectParentChecked(datas,row,id,pid){
+	        for(var i in datas){
+	            if(datas[i][id] == row[pid]){
+	                datas[i].check=true;
+	                selectParentChecked(datas,datas[i],id,pid);
+	            };
+	        }
+	    }
+
+	    
+	    function add(id) {
+	        alert("add 方法 , id = " + id);
+	    }
+	    function del(id) {
+	        alert("del 方法 , id = " + id);
+	    }
+	    function update(id) {
+	        alert("update 方法 , id = " + id);
+	    }
+	    
+	    
+	    
+
+	    $(document).ready(function () {
+	    	
+	    	$.get('./resource/simpleResources',function success(data){
+	    		$table.bootstrapTable({
+		            data:data,
+		            idField: 'id',
+		            dataType:'jsoup',
+		            columns: [
+		               /* { field: 'check',  checkbox: true, formatter: function (value, row, index) {
+		                        if (row.check == true) {
+		                            //设置选中
+		                            return { checked: true };
+		                        }
+		                    }
+		                },*/
+		                { field: 'name',  title: '名称' },
+		               // {field: 'id', title: '编号', sortable: true, align: 'center'},
+		               // {field: 'pid', title: '所属上级'},
+		                { field: 'link',  title: 'url路径', sortable: true, align:'center'},
+		                { field: 'permission', title: '权限字符串'},
+		                { field: 'icon', title: '图标', align: 'center', formatter: 'iconFormatter'},//图标处理
+		                { field: 'sort', title: '序号'},//图标处理
+		                { field: 'operate', title: '操作', align: 'center', events : operateEvents, formatter: 'operateFormatter'},
+		            ],
+
+		            // bootstrap-table-treegrid.js 插件配置 -- start
+
+		            //在哪一列展开树形
+		            treeShowField: 'name',
+		            //指定父id列
+		            parentIdField: 'parentId',
+		            
+		            onResetView: function(data) {
+		                //console.log('load');
+		                $table.treegrid({
+		                    initialState: 'collapsed',// 所有节点都折叠
+		                    // initialState: 'expanded',// 所有节点都展开，默认展开
+		                    treeColumn: 1,
+		                     expanderExpandedClass: 'glyphicon glyphicon-minus',  //图标样式
+		                     expanderCollapsedClass: 'glyphicon glyphicon-plus',
+		                    onChange: function() {
+		                        $table.bootstrapTable('resetWidth');
+		                    }
+		                });
+
+		                //只展开树形的第一级节点
+		                $table.treegrid('getRootNodes').treegrid('expand');
+
+		            },
+		            onCheck:function(row){
+		                var datas = $table.bootstrapTable('getData');
+		                // 勾选子类
+		                selectChilds(datas,row,"id","pid",true);
+
+		                // 勾选父类
+		                selectParentChecked(datas,row,"id","pid")
+
+		                // 刷新数据
+		                $table.bootstrapTable('load', datas);
+		            },
+
+		            onUncheck:function(row){
+		                var datas = $table.bootstrapTable('getData');
+		                selectChilds(datas,row,"id","pid",false);
+		                $table.bootstrapTable('load', datas);
+		            }
+		            // bootstrap-table-treetreegrid.js 插件配置 -- end
+		        });
+			});
+     });
+
+    </script>
+
+</body>
+
+</html>
